@@ -17,10 +17,13 @@ jobs:
 
       - name: Cleanup old licenses
         run: |
-          sudo rm -rf /usr/share/unity3d/config/
-          sudo rm -rf /root/.local/share/unity3d/unity/
-          sudo rm -rf /root/.cache/unity3d
-          mkdir -p /root/.cache/unity3d
+          # Supprime les configs dans le répertoire partagé (si accessible)
+          sudo rm -rf /usr/share/unity3d/config/ || true
+          # Supprime les licences dans le home de l'utilisateur courant (runner)
+          rm -rf ~/.local/share/unity3d/unity/
+          rm -rf ~/.cache/unity3d
+          # Recréer le dossier de cache local au cas où
+          mkdir -p ~/.cache/unity3d
 
       - name: Unity - Activate
         uses: game-ci/unity-activate@v2
