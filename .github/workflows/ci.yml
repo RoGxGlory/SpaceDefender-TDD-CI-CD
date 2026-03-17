@@ -1,28 +1,26 @@
 name: CI - Space Defender
- 
+
 on:
   push:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
- 
+
 jobs:
   test:
     name: Build & Tests NUnit
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Cleanup old licenses
         run: |
-          # Supprime les configs dans le répertoire partagé (si accessible)
+          # Supprime les configs résiduelles pour éviter le message "status: invalid"
           sudo rm -rf /usr/share/unity3d/config/ || true
-          # Supprime les licences dans le home de l'utilisateur courant (runner)
           rm -rf ~/.local/share/unity3d/unity/
           rm -rf ~/.cache/unity3d
-          # Recréer le dossier de cache local au cas où
           mkdir -p ~/.cache/unity3d
 
       - name: Unity - Activate
@@ -31,9 +29,9 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
- 
+
       - name: Cache Unity Library
-        uses: actions/cache@v3
+        uses: actions/cache@v4 # Passage en v4 pour une meilleure gestion sur Ubuntu-latest
         with:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**') }}
@@ -41,12 +39,17 @@ jobs:
 
       - name: Run Tests (EditMode)
         uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ""
+          UNITY_EMAIL: ""
+          UNITY_PASSWORD: ""
         with:
+          unityVersion: 6000.1.17f1
           projectPath: .
           testMode: EditMode
           artifactsPath: test-results/
           coverageOptions: generateAdditionalMetrics;generateHtmlReport
- 
+
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         if: always()
@@ -54,7 +57,7 @@ jobs:
           name: test-results
           path: test-results/
           retention-days: 14
- 
+
       - name: Upload Coverage Report
         uses: actions/upload-artifact@v4
         if: always()
