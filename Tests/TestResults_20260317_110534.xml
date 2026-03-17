@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="13" result="Failed(Child)" total="13" passed="9" failed="4" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="0001-01-01 00:00:00Z" end-time="0001-01-01 00:00:00Z" duration="0,0398991">
+  <test-suite type="TestSuite" id="1000" name="SpaceDefender" fullname="SpaceDefender" runstate="Runnable" testcasecount="13" result="Failed" site="Child" start-time="2026-03-17 10:05:28Z" end-time="2026-03-17 10:05:29Z" duration="0.039899" total="13" passed="9" failed="4" inconclusive="0" skipped="0" asserts="0">One or more child tests had errorsOne or more child tests had errorsOne or more child tests had errors  Expected: False
+  But was:  True
+at PlayerTests.IsAlive_WhenHealthIsZero_ReturnsFalse () [0x0001d] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:74
+  Expected: 80
+  But was:  30
+at PlayerTests.TakeDamage_Normal_ReducesHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:23
+  Expected: 0
+  But was:  100
+at PlayerTests.TakeDamage_WithFatalDamage_SetsHealthToZero () [0x00014] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:33
+  Expected: 100
+  But was:  60
+at PlayerTests.TakeDamage_WithNegativeAmount_DoesNotChangeHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:42
+<properties><property name="platform" value="PlayMode"></property></properties><failure>One or more child tests had errors<message>One or more child tests had errors</message></failure><test-suite type="Assembly" id="1015" name="Assembly-CSharp.dll" fullname="D:/Developpement/SpaceDefender/Temp/UnityTempFile-becfd39d91a810e4f8f77076e8d24c30/PlayerWithTests/PlayerWithTests_Data/Managed/Assembly-CSharp.dll" runstate="Runnable" testcasecount="13" result="Failed" site="Child" start-time="2026-03-17 10:05:28Z" end-time="2026-03-17 10:05:29Z" duration="0.031044" total="13" passed="9" failed="4" inconclusive="0" skipped="0" asserts="0">One or more child tests had errorsOne or more child tests had errors  Expected: False
+  But was:  True
+at PlayerTests.IsAlive_WhenHealthIsZero_ReturnsFalse () [0x0001d] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:74
+  Expected: 80
+  But was:  30
+at PlayerTests.TakeDamage_Normal_ReducesHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:23
+  Expected: 0
+  But was:  100
+at PlayerTests.TakeDamage_WithFatalDamage_SetsHealthToZero () [0x00014] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:33
+  Expected: 100
+  But was:  60
+at PlayerTests.TakeDamage_WithNegativeAmount_DoesNotChangeHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:42
+<properties><property name="_PID" value="4400"></property><property name="_APPDOMAIN" value="Unity Root Domain"></property><property name="platform" value="PlayMode"></property><property name="EditorOnly" value="False"></property></properties><failure>One or more child tests had errors<message>One or more child tests had errors</message></failure><test-suite type="TestFixture" id="1001" name="PlayerTests" fullname="PlayerTests" classname="PlayerTests" runstate="Runnable" testcasecount="13" result="Failed" site="Child" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.029477" total="13" passed="9" failed="4" inconclusive="0" skipped="0" asserts="0">One or more child tests had errors  Expected: False
+  But was:  True
+at PlayerTests.IsAlive_WhenHealthIsZero_ReturnsFalse () [0x0001d] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:74
+  Expected: 80
+  But was:  30
+at PlayerTests.TakeDamage_Normal_ReducesHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:23
+  Expected: 0
+  But was:  100
+at PlayerTests.TakeDamage_WithFatalDamage_SetsHealthToZero () [0x00014] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:33
+  Expected: 100
+  But was:  60
+at PlayerTests.TakeDamage_WithNegativeAmount_DoesNotChangeHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:42
+<properties></properties><failure>One or more child tests had errors<message>One or more child tests had errors</message></failure><test-case id="1012" name="ApplyCombo_With3Kills_IncreasesMultiplier" fullname="PlayerTests.ApplyCombo_With3Kills_IncreasesMultiplier" methodname="ApplyCombo_With3Kills_IncreasesMultiplier" classname="PlayerTests" runstate="Runnable" seed="1672822982" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.007728" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1014" name="Calculate_AfterComboAndReset_UsesBaseMultiplier" fullname="PlayerTests.Calculate_AfterComboAndReset_UsesBaseMultiplier" methodname="Calculate_AfterComboAndReset_UsesBaseMultiplier" classname="PlayerTests" runstate="Runnable" seed="2025963972" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000104" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1011" name="Calculate_WithZeroKills_ReturnsZero" fullname="PlayerTests.Calculate_WithZeroKills_ReturnsZero" methodname="Calculate_WithZeroKills_ReturnsZero" classname="PlayerTests" runstate="Runnable" seed="1514930432" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000056" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1010" name="GetReward_WhenAlreadyDead_ReturnsZero" fullname="PlayerTests.GetReward_WhenAlreadyDead_ReturnsZero" methodname="GetReward_WhenAlreadyDead_ReturnsZero" classname="PlayerTests" runstate="Runnable" seed="2101101069" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000045" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1006" name="Heal_WhenAlreadyFullHealth_DoesNotExceed100" fullname="PlayerTests.Heal_WhenAlreadyFullHealth_DoesNotExceed100" methodname="Heal_WhenAlreadyFullHealth_DoesNotExceed100" classname="PlayerTests" runstate="Runnable" seed="2085476270" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.004951" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1005" name="Heal_WhenHealthBelow100_IncreasesHealth" fullname="PlayerTests.Heal_WhenHealthBelow100_IncreasesHealth" methodname="Heal_WhenHealthBelow100_IncreasesHealth" classname="PlayerTests" runstate="Runnable" seed="1725545650" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000125" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1007" name="IsAlive_WhenHealthIsZero_ReturnsFalse" fullname="PlayerTests.IsAlive_WhenHealthIsZero_ReturnsFalse" methodname="IsAlive_WhenHealthIsZero_ReturnsFalse" classname="PlayerTests" runstate="Runnable" seed="652792018" result="Failed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.004997" asserts="0">  Expected: False
+  But was:  True
+at PlayerTests.IsAlive_WhenHealthIsZero_ReturnsFalse () [0x0001d] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:74
+<properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties><failure>  Expected: False
+  But was:  True
+at PlayerTests.IsAlive_WhenHealthIsZero_ReturnsFalse () [0x0001d] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:74
+<message>  Expected: False
+  But was:  True
+</message><stack-trace>at PlayerTests.IsAlive_WhenHealthIsZero_ReturnsFalse () [0x0001d] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:74
+</stack-trace></failure></test-case><test-case id="1008" name="LoseLife_WhenLastLife_IsAliveReturnsFalse" fullname="PlayerTests.LoseLife_WhenLastLife_IsAliveReturnsFalse" methodname="LoseLife_WhenLastLife_IsAliveReturnsFalse" classname="PlayerTests" runstate="Runnable" seed="329864742" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000126" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1013" name="ResetMultiplier_AfterCombo_SetsMultiplierToOne" fullname="PlayerTests.ResetMultiplier_AfterCombo_SetsMultiplierToOne" methodname="ResetMultiplier_AfterCombo_SetsMultiplierToOne" classname="PlayerTests" runstate="Runnable" seed="1804903242" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000055" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1002" name="TakeDamage_Normal_ReducesHealth" fullname="PlayerTests.TakeDamage_Normal_ReducesHealth" methodname="TakeDamage_Normal_ReducesHealth" classname="PlayerTests" runstate="Runnable" seed="530354584" result="Failed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000512" asserts="0">  Expected: 80
+  But was:  30
+at PlayerTests.TakeDamage_Normal_ReducesHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:23
+<properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties><failure>  Expected: 80
+  But was:  30
+at PlayerTests.TakeDamage_Normal_ReducesHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:23
+<message>  Expected: 80
+  But was:  30
+</message><stack-trace>at PlayerTests.TakeDamage_Normal_ReducesHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:23
+</stack-trace></failure></test-case><test-case id="1009" name="TakeDamage_WhenKilled_SetsIsAliveToFalse" fullname="PlayerTests.TakeDamage_WhenKilled_SetsIsAliveToFalse" methodname="TakeDamage_WhenKilled_SetsIsAliveToFalse" classname="PlayerTests" runstate="Runnable" seed="1832192175" result="Passed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000115" asserts="0"><properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties></test-case><test-case id="1003" name="TakeDamage_WithFatalDamage_SetsHealthToZero" fullname="PlayerTests.TakeDamage_WithFatalDamage_SetsHealthToZero" methodname="TakeDamage_WithFatalDamage_SetsHealthToZero" classname="PlayerTests" runstate="Runnable" seed="2033159504" result="Failed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000178" asserts="0">  Expected: 0
+  But was:  100
+at PlayerTests.TakeDamage_WithFatalDamage_SetsHealthToZero () [0x00014] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:33
+<properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties><failure>  Expected: 0
+  But was:  100
+at PlayerTests.TakeDamage_WithFatalDamage_SetsHealthToZero () [0x00014] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:33
+<message>  Expected: 0
+  But was:  100
+</message><stack-trace>at PlayerTests.TakeDamage_WithFatalDamage_SetsHealthToZero () [0x00014] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:33
+</stack-trace></failure></test-case><test-case id="1004" name="TakeDamage_WithNegativeAmount_DoesNotChangeHealth" fullname="PlayerTests.TakeDamage_WithNegativeAmount_DoesNotChangeHealth" methodname="TakeDamage_WithNegativeAmount_DoesNotChangeHealth" classname="PlayerTests" runstate="Runnable" seed="925690609" result="Failed" start-time="2026-03-17 10:05:29Z" end-time="2026-03-17 10:05:29Z" duration="0.000149" asserts="0">  Expected: 100
+  But was:  60
+at PlayerTests.TakeDamage_WithNegativeAmount_DoesNotChangeHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:42
+<properties><property name="retryIteration" value="0"></property><property name="repeatIteration" value="0"></property></properties><failure>  Expected: 100
+  But was:  60
+at PlayerTests.TakeDamage_WithNegativeAmount_DoesNotChangeHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:42
+<message>  Expected: 100
+  But was:  60
+</message><stack-trace>at PlayerTests.TakeDamage_WithNegativeAmount_DoesNotChangeHealth () [0x00011] in D:\Developpement\SpaceDefender\Assets\Tests\EditMode\PlayerTests.cs:42
+</stack-trace></failure></test-case></test-suite></test-suite></test-suite>
+</test-run>
