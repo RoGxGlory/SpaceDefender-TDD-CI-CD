@@ -23,13 +23,6 @@ jobs:
           rm -rf ~/.cache/unity3d
           mkdir -p ~/.cache/unity3d
 
-      - name: Unity - Activate
-        uses: game-ci/unity-activate@v2
-        env:
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-
       - name: Cache Unity Library
         uses: actions/cache@v4 # Passage en v4 pour une meilleure gestion sur Ubuntu-latest
         with:
@@ -40,9 +33,9 @@ jobs:
       - name: Run Tests (EditMode)
         uses: game-ci/unity-test-runner@v4
         env:
-          UNITY_LICENSE: ""
-          UNITY_EMAIL: ""
-          UNITY_PASSWORD: ""
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           unityVersion: 6000.1.17f1
           projectPath: .
