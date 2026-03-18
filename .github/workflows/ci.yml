@@ -7,6 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
+  # --- TEST JOB ---
   test:
     name: Build & Tests NUnit
     runs-on: ubuntu-latest
@@ -14,17 +15,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          lfs: true # ensure assets actually load for tests
 
       - name: Cleanup old licenses
         run: |
-          # Supprime les configs résiduelles pour éviter le message "status: invalid"
           sudo rm -rf /usr/share/unity3d/config/ || true
           rm -rf ~/.local/share/unity3d/unity/
           rm -rf ~/.cache/unity3d
           mkdir -p ~/.cache/unity3d
 
       - name: Cache Unity Library
-        uses: actions/cache@v4 # Passage en v4 pour une meilleure gestion sur Ubuntu-latest
+        uses: actions/cache@v4
         with:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**') }}
@@ -58,3 +60,41 @@ jobs:
           name: coverage-report
           path: CodeCoverage/
           retention-days: 14
+
+  # --- BUILD JOB ---
+  build:
+    name: Build WebGL
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+ 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+ 
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**') }}
+          restore-keys: Library-
+ 
+      - name: Build WebGL
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL:   ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+          buildName: SpaceDefender
+          unityVersion: 6000.1.17f1 # Matches test job version
+ 
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-webgl
+          path: build/WebGL/
+          retention-days: 30
